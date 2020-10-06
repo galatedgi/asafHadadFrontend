@@ -32,18 +32,37 @@ export default {
             const res= await this.axios.get(`https://asafhadadbackend.herokuapp.com/queue/dates`);
             let dates=res.data;
                for(let i in res.data){
-                    if(res.data[i].day=="Sunday")
-                         this.days.push(res.data[i].date +" "+days[0]);
-                    else if(res.data[i].day=="Monday")
-                         this.days.push(res.data[i].date +" "+days[1]);
-                    else if(res.data[i].day=="Tuesday")
-                         this.days.push(res.data[i].date +" "+days[2]);
-                    else if(res.data[i].day=="Wednesday")
-                         this.days.push( res.data[i].date +" "+days[3]);
-                    else if(res.data[i].day=="Thursday")
-                        this.days.push( res.data[i].date +" "+days[4]);
-                    else if(res.data[i].day=="Friday")
-                         this.days.push( res.data[i].date +" "+days[5]);
+                    let item=new Object();
+                    if(res.data[i].day=="Sunday"){
+                        item.text=res.data[i].date +" "+days[0];
+                        item.value=res.data[i].date;
+                         this.days.push(item);
+                    }
+                    else if(res.data[i].day=="Monday"){
+                         item.text=res.data[i].date +" "+days[1];
+                        item.value=res.data[i].date;
+                         this.days.push(item);                    
+                    }
+                    else if(res.data[i].day=="Tuesday"){
+                        item.text=res.data[i].date +" "+days[2];
+                        item.value=res.data[i].date;
+                         this.days.push(item);                    
+                    }
+                    else if(res.data[i].day=="Wednesday"){
+                        item.text=res.data[i].date +" "+days[3];
+                        item.value=res.data[i].date;
+                         this.days.push(item);                    
+                    }
+                    else if(res.data[i].day=="Thursday"){
+                        item.text=res.data[i].date +" "+days[4];
+                        item.value=res.data[i].date;
+                         this.days.push(item);                   
+                    }
+                    else if(res.data[i].day=="Friday"){
+                        item.text=res.data[i].date +" "+days[5];
+                        item.value=res.data[i].date;
+                         this.days.push(item);                    
+                    }
                  
              }
         }catch{
@@ -54,8 +73,8 @@ export default {
         async times(){
             try{
                 this.daytimes=[];
-                let selectedDate=this.form.day.split(" ")[0];
-                let times= await this.axios.get(`https://asafhadadbackend.herokuapp.com/queue/allturns/day/${selectedDate}`);
+                this.form.time="";
+                let times= await this.axios.get(`https://asafhadadbackend.herokuapp.com/queue/allturns/day/${this.form.day}`);
                 for(let i in times.data){
                     console.log(times.data[i]);
                     if(times.data[i].status == "free"){
@@ -81,7 +100,26 @@ export default {
             }
         },
         async addTurn(){
-            alert("yess");
+            try{
+                let username=this.$root.store.username;
+                console.log("dsds");
+                console.log(username);
+                let date=this.form.day;
+                let time=this.form.time;
+                const response = await this.axios.post(
+                    "https://asafhadadbackend.herokuapp.com/queue/addturn",
+                {
+                    username: username,
+                    date: date,
+                    time: time
+                }
+                );
+                console.log(response);
+            }catch(err){
+                console.log(err);
+                this.$router.push("/error");
+            }
+            
         },
         changeBtn(){
             document.getElementById("submitBtn").disabled=false;
