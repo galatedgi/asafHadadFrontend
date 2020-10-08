@@ -66,7 +66,15 @@ Vue.config.productionTip = false;
 
 const shared_data = {
   username: localStorage.username,
-  login(username) {
+  name:"אורח",
+  async login(username) {
+    const response = await axios.post(
+      "https://asafhadadbackend.herokuapp.com/login",
+      {
+        username: username,
+      }
+    );
+    this.name=response.data.name;
     localStorage.setItem("asafhadadBarbershop", username);
     this.username = username;
     console.log("login", this.username);

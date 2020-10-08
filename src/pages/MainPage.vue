@@ -3,9 +3,19 @@
     <b-container>
       <b-row>
         <b-col v-if="$root.store.username">
-          <b-button  @click="addturn()" >הזמנת תור </b-button>
-          <br>
-           <b-button >התורים שלי </b-button>
+          <p><b-button v-b-toggle.addturn>הזמנת תור </b-button></p>
+          <b-collapse id="addturn" class="mt-2">
+              <b-card>
+                      <addTurnPage/>
+              </b-card>
+           </b-collapse>
+           <p><b-button>התורים שלי </b-button></p>
+           <!-- <div class="collapse" id="collapseExample">
+             <div class="card card-body">
+               <addTurnPage/>
+               fsdfsd
+             </div>
+           </div> -->
           <br>
            <b-button >צור קשר </b-button>
           <br>
@@ -23,32 +33,27 @@
 </template>
 
 <script>
-import { eventBus } from "../main.js";
+// import { eventBus } from "../main.js";
+import addTurnPage from "./AddTurnPage";
 export default {
   name: "Main",
+  components:{
+    addTurnPage
+  },
   methods: {
     Login(){
       this.$router.push("/login");
     },
      Register(){
       this.$router.push("/register");
-    },
-     addturn(){
-      this.$router.push("/addturn");
     }
   }
 };
 </script>
 
 <style lang="scss" scoped>
-
-.randomBtn {
-  left: 15%;
-  position: relative;
-  height: auto;
-  width: auto;
-  background-size: auto;
-  background-color: #F08080;
-  border-color: white;
-}
+  div{
+    align-items: center;
+    text-align: center;
+  }
 </style>

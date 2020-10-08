@@ -70,12 +70,13 @@ export default {
     },
     async Login() {
       try {
-        const response = await this.axios.post(
-          "https://asafhadadbackend.herokuapp.com/login",
-          {
-            username: this.form.username,
-          }
-        );
+        // const response = await this.axios.post(
+        //   "https://asafhadadbackend.herokuapp.com/login",
+        //   {
+        //     username: this.form.username,
+        //   }
+        // );
+        // console.log(response);
         this.$root.store.login(this.form.username);
         // eventBus.$emit('fireMethod');
         // if(this.$route.name==="login"){
