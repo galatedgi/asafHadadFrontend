@@ -3,19 +3,18 @@
     <b-container>
       <b-row>
         <b-col v-if="$root.store.username">
-          <p><b-button v-b-toggle.addturn>הזמנת תור </b-button></p>
-          <b-collapse id="addturn" class="mt-2">
+          <p><b-button v-b-toggle.add_turn>הזמנת תור </b-button></p>
+          <b-collapse id="add_turn" class="mt-2">
               <b-card>
-                      <addTurnPage/>
+                      <addTurn/>
               </b-card>
            </b-collapse>
-           <p><b-button>התורים שלי </b-button></p>
-           <!-- <div class="collapse" id="collapseExample">
-             <div class="card card-body">
-               <addTurnPage/>
-               fsdfsd
-             </div>
-           </div> -->
+           <p><b-button  v-b-toggle.queue_manager>התורים שלי </b-button></p>
+          <b-collapse id="queue_manager" class="mt-2" @show="myTurns()">
+                <b-card>
+                      <queueManager ref="queueManager"/>
+              </b-card>
+          </b-collapse>
           <br>
            <b-button >צור קשר </b-button>
           <br>
@@ -33,12 +32,19 @@
 </template>
 
 <script>
-// import { eventBus } from "../main.js";
-import addTurnPage from "./AddTurnPage";
+import { eventBus } from "../main.js";
+import addTurn from "../components/AddTurn";
+import queueManager from "../components/QueueManager";
 export default {
   name: "Main",
   components:{
-    addTurnPage
+    addTurn,
+    queueManager
+  },
+  async created() {
+    eventBus.$on('setMyTurns',()=>{
+      this.myTurns();
+    });
   },
   methods: {
     Login(){
@@ -46,6 +52,9 @@ export default {
     },
      Register(){
       this.$router.push("/register");
+    },
+    async myTurns(){
+      this.$refs.queueManager.setTurns();
     }
   }
 };

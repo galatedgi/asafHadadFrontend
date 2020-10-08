@@ -104,6 +104,10 @@ export default {
 .container {
   max-width: 400px;
 }
+div{
+    align-items: center;
+    text-align: center;
+   }
 
-.btn-primary-outline { background-color: transparent; border-color: whitesmoke; }
+// .btn-primary-outline { background-color: transparent; border-color: whitesmoke; }
 </style>

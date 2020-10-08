@@ -3,7 +3,7 @@
         <h1 class="title">קבע תור חדש!</h1>
         <b-form>
             <b-form-group id="input-group-days" label-cols-sm="10" label="תאריך:" label-for="days">
-                <b-form-select id="days" v-model="form.day" :options="days" @change="times()"></b-form-select>
+                <b-form-select id="days" v-model="form.day" :options="days" @change="setTimes()"></b-form-select>
             </b-form-group>
              <b-form-group id="input-group-times" label-cols-sm="10" label="שעה:" label-for="daytimes">
                 <b-form-select id="daytimes" v-model="form.time" :options="daytimes" disabled @change="changeBtn()"></b-form-select>
@@ -15,6 +15,7 @@
 
 <script>
 import days from "../assets/days";
+import { eventBus } from "../main.js";
 export default {
     name: "addTurn",
     data(){
@@ -65,12 +66,13 @@ export default {
                     }
                  
              }
-        }catch{
+        }catch(err){
+            console.log(err);
           this.$router.push("/error");
         }
     },
     methods:{
-        async times(){
+        async setTimes(){
             try{
                 this.daytimes=[];
                 this.form.time="";
@@ -115,6 +117,7 @@ export default {
                 }
                 );
                 console.log(response);
+                eventBus.$emit('setMyTurns');
             }catch(err){
                 console.log(err);
                 this.$router.push("/error");

@@ -20,11 +20,6 @@ const routes = [
     component: ()=> import("./pages/RegisterPage")
   },
   {
-    path: "/addturn",
-    name: "addTurn",
-    component: ()=> import("./pages/AddTurnPage")
-  },
-  {
     path: "/error",
     name: "error",
     component: ErrorPage

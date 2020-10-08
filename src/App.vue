@@ -1,5 +1,5 @@
 <template>
-  <div id="app" dir="rtl">>
+  <div id="app" dir="rtl">
     <!-- <link href='https://fonts.googleapis.com/css?family=Cute Font' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Cormorant Infant' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'> -->

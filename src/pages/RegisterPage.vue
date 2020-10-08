@@ -130,6 +130,11 @@ export default {
   max-width: 500px;
 }
 
+div{
+    align-items: center;
+    text-align: center;
+   }
+
 .Rbtn{
    background-color: #FA8072; border-color: white
 }
