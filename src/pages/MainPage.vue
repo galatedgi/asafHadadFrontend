@@ -1,16 +1,17 @@
 <template>
   <div dir="rtl">
     <b-container>
+      <h1> Asaf Hadad Barbershop </h1>
       <b-row>
         <b-col v-if="$root.store.username">
-          <p><b-button v-b-toggle.add_turn>הזמנת תור </b-button></p>
-          <b-collapse id="add_turn" class="mt-2">
+          <p><b-button class="btn" v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
+          <b-collapse id="add_turn" class="mt-2" accordion="my-accordion">
               <b-card>
                       <addTurn/>
               </b-card>
            </b-collapse>
-           <p><b-button  v-b-toggle.queue_manager>התורים שלי </b-button></p>
-          <b-collapse id="queue_manager" class="mt-2" @show="myTurns()">
+           <p><b-button  v-b-toggle.queue_manager data-toggle="collapse">התורים שלי </b-button></p>
+          <b-collapse id="queue_manager" class="mt-2" @show="myTurns()" accordion="my-accordion">
                 <b-card>
                       <queueManager ref="queueManager"/>
               </b-card>
@@ -23,7 +24,7 @@
         </b-col>
           <b-col v-else>
             <b-button  @click="Login()">התחבר </b-button>
-            <br>
+            <br> 
             <b-button  @click="Register()">הרשם </b-button>
         </b-col>
       </b-row>
@@ -39,13 +40,18 @@ export default {
   name: "Main",
   components:{
     addTurn,
-    queueManager
+    queueManager,
   },
-  async created() {
-    eventBus.$on('setMyTurns',()=>{
-      this.myTurns();
-    });
+  data(){
+    return{
+          collapseStates: [false, false]
+    }
   },
+  // async created() {
+  //   eventBus.$on('setMyTurns',()=>{
+  //     this.myTurns();
+  //   });
+  // },
   methods: {
     Login(){
       this.$router.push("/login");
@@ -55,6 +61,10 @@ export default {
     },
     async myTurns(){
       this.$refs.queueManager.setTurns();
+    },
+    collapseAll() {
+      console.log("DSd");
+      this.collapseStates = this.collapseStates.map(x => false)
     }
   }
 };
@@ -65,4 +75,12 @@ export default {
     align-items: center;
     text-align: center;
   }
+
+  .btn{
+    background-color:teal;
+  }
+
+  // h1{
+  //   color: aqua;
+  // }
 </style>

@@ -3,7 +3,7 @@
     <!-- <link href='https://fonts.googleapis.com/css?family=Cute Font' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Cormorant Infant' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'> -->
-
+    <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital@1&display=swap" rel="stylesheet">
     <b-navbar type="dark" variant="dark">
       <b-navbar-nav class="navbar-nav mr-auto">
          <!-- <b-nav-item :to="{ name: 'main' }" class="nav-item active">
@@ -55,18 +55,21 @@ export default {
 //  }
 
 #app {
-      font-family: 'Acme';font-size: 22px;
+  //     font-family: 'Acme';font-size: 22px;
 
   // font-family: 'Cormorant Infant';
+  font-family: 'Piazzolla', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #504f2c;
+  color:whitesmoke;
   min-height: 100vh;
-    // background:url("./assets/bg3.png")no-repeat center center fixed;
+  // background-color: rgb(2, 0, 129);
+   background:url("./assets/Background3.jpg")no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+
 }
 
 .b-nav-text
@@ -144,7 +147,7 @@ export default {
 //     }
 
  .navbar.navbar-dark.bg-dark{
-    background-color: #FA8072 !important;
+    background-color: #000000 !important;
  }
 
 //  #guest{

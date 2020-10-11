@@ -15,7 +15,7 @@
 
 <script>
 import days from "../assets/days";
-import { eventBus } from "../main.js";
+// import { eventBus } from "../main.js";
 export default {
     name: "addTurn",
     data(){
@@ -117,7 +117,7 @@ export default {
                 }
                 );
                 console.log(response);
-                eventBus.$emit('setMyTurns');
+                // eventBus.$emit('setMyTurns');
             }catch(err){
                 console.log(err);
                 this.$router.push("/error");
