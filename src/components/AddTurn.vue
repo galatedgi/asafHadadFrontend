@@ -132,9 +132,9 @@ export default {
 </script>
 
 <style>
-
+/* 
 .btn{
     background-color:teal;
-  }
+  } */
 
 </style>
