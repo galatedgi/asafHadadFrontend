@@ -22,13 +22,12 @@
 
       <b-button
         type="submit"
-        style="width:100px;display:block; background-color: #FA8072; border-color: white"
         class="mx-auto w-100"
         >Login</b-button
       >
       <div dir="rtl" class="mt-2">
         אינך רשום לשירות?
-        <router-link to="register"> הרשם כאן</router-link>
+        <router-link to="register" class="link"> הרשם כאן</router-link>
       </div>
     </b-form>
     <b-alert
@@ -108,6 +107,15 @@ div{
     align-items: center;
     text-align: center;
    }
+
+   
+.btn{
+    background-color:teal;
+  }
+
+  .link{
+    color: rgb(53, 190, 190);
+  }
 
 // .btn-primary-outline { background-color: transparent; border-color: whitesmoke; }
 </style>

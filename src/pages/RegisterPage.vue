@@ -34,7 +34,7 @@
       <b-button type="submit" variant="primary" style="width:250px;" class="ml-5 w-75 Rbtn">הרשם</b-button>
       <div class="mt-2">
         הינך רשום לשירות?
-        <router-link to="login"> לחץ כאן להתחברות</router-link>
+        <router-link to="login" class="link"> לחץ כאן להתחברות</router-link>
       </div>
     </b-form>
     <b-alert class="mt-2" v-if="form.submitError" variant="warning" dismissible show>
@@ -136,6 +136,10 @@ div{
    }
 
 .Rbtn{
-   background-color: #FA8072; border-color: white
+   background-color: teal; border-color: teal;
 }
+
+  .link{
+    color: rgb(53, 190, 190);
+  }
 </style>
