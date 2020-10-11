@@ -4,7 +4,7 @@
       <h1> Asaf Hadad Barbershop </h1>
       <b-row>
         <b-col v-if="$root.store.username">
-          <p><b-button class="btn" v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
+          <p><b-button pill class="btn" v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
           <b-collapse id="add_turn" class="mt-2" accordion="my-accordion">
               <b-card>
                       <addTurn/>
@@ -77,7 +77,7 @@ export default {
   }
 
   .btn{
-    background-color:teal;
+    background-color:gray;
   }
 
   // h1{
