@@ -4,28 +4,26 @@
       <h1> Asaf Hadad Barbershop </h1>
       <b-row>
         <b-col v-if="$root.store.username">
-          <p><b-button pill class="btn" v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
+          <p><b-button pill data-toggle="collapse"> מי אני? </b-button></p>
+          <p><b-button pill v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
           <b-collapse id="add_turn" class="mt-2" accordion="my-accordion">
-              <b-card>
+              <b-card class="myCollapse">
                       <addTurn/>
               </b-card>
            </b-collapse>
-           <p><b-button  v-b-toggle.queue_manager data-toggle="collapse">התורים שלי </b-button></p>
+           <p><b-button pill v-b-toggle.queue_manager data-toggle="collapse">התורים שלי </b-button></p>
           <b-collapse id="queue_manager" class="mt-2" @show="myTurns()" accordion="my-accordion">
-                <b-card>
+                <b-card class="myCollapse">
                       <queueManager ref="queueManager"/>
               </b-card>
           </b-collapse>
-          <br>
-           <b-button >צור קשר </b-button>
-          <br>
-           <b-button >איך מגיעים </b-button>
-          <br>
+           <p><b-button pill >צור קשר </b-button></p>
+           <p><b-button pill >איך מגיעים </b-button></p>
         </b-col>
           <b-col v-else>
-            <b-button  @click="Login()">התחבר </b-button>
-            <br> 
-            <b-button  @click="Register()">הרשם </b-button>
+            <p><b-button pill data-toggle="collapse"> מי אני? </b-button></p>
+            <p><b-button pill  @click="Login()">התחבר </b-button></p>
+            <p><b-button pill @click="Register()">הרשם </b-button></p>
         </b-col>
       </b-row>
     </b-container>
@@ -77,9 +75,21 @@ export default {
   }
 
   .btn{
-    background-color:gray;
+    background-color:teal;
+    width:100px ;
+    height: 40px;
   }
 
+  .myCollapse{
+    align-items: center;
+    background:none;
+    border-color: teal;;
+border-width: thin;
+    // padding: 5%;
+    // width: 40%;
+    // height: 50%;
+    border-radius: 20px;
+  }
   // h1{
   //   color: aqua;
   // }

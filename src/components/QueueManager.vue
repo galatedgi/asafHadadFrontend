@@ -102,3 +102,9 @@ export default {
     // }
 }
 </script>
+
+<style>
+.table {
+ color:whitesmoke;
+}
+</style>
