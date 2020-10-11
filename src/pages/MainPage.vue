@@ -76,15 +76,14 @@ export default {
 
   .btn{
     background-color:teal;
-    width:100px ;
+    width:120px ;
     height: 40px;
   }
 
   .myCollapse{
     align-items: center;
     background:none;
-    border-color: teal;;
-border-width: thin;
+    border-color: teal;
     // padding: 5%;
     // width: 40%;
     // height: 50%;

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <table class="table" :items="myTurns">
-             <thead class="thead-light">
+        <table id="myTable" class="table" :items="myTurns">
+            <thead class="thead-light">
             <tr>
                 <th>תאריך</th>
                 <th>יום</th>
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style>
-.table {
+#myTable {
  color:whitesmoke;
 }
 </style>
