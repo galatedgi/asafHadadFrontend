@@ -111,7 +111,7 @@ export default {
     background:none;
     border-color: teal;
     // padding: 5%;
-    width: 400px;
+    width: 320px;
     // height: 50%;
     border-radius: 20px;
   }
