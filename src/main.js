@@ -2,15 +2,8 @@ import Vue from "vue";
 import App from "./App.vue";
 import VueAxios from "vue-axios";
 import axios from "axios";
- axios.defaults.withCredentials = true;
-
-
 import routes from "./routes";
 import VueRouter from "vue-router";
-Vue.use(VueRouter);
-const router = new VueRouter({
-  routes
-});
 import Vuelidate from "vuelidate";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
@@ -25,7 +18,8 @@ import {
   AlertPlugin,
   ToastPlugin,
   LayoutPlugin,
-  ProgressPlugin
+  ProgressPlugin,
+  CarouselPlugin
 } from "bootstrap-vue";
 [
   FormGroupPlugin,
@@ -38,8 +32,15 @@ import {
   AlertPlugin,
   ToastPlugin,
   LayoutPlugin,
-  ProgressPlugin
+  ProgressPlugin,
+  CarouselPlugin
 ].forEach((x) => Vue.use(x));
+
+axios.defaults.withCredentials = true;
+Vue.use(VueRouter);
+const router = new VueRouter({
+  routes
+});
 Vue.use(Vuelidate);
 
 axios.interceptors.request.use(
@@ -61,9 +62,7 @@ axios.interceptors.response.use(
 );
 
 Vue.use(VueAxios, axios);
-
 Vue.config.productionTip = false;
-
 const shared_data = {
   username: localStorage.username,
   name:"אורח",
@@ -85,10 +84,8 @@ const shared_data = {
     this.username = undefined;
   },
 };
-console.log(shared_data);
 Vue.prototype.$store = shared_data;
 
-export const eventBus = new Vue();
 
 new Vue({
   router,
@@ -113,3 +110,4 @@ new Vue({
   },
   render: (h) => h(App)
 }).$mount("#app");
+export const eventBus = new Vue();

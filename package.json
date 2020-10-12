@@ -20,6 +20,7 @@
     "simple-modal-vue": "^1.0.12",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
+    "vue-carousel-3d": "^1.0.1",
     "vue-dynamic-dropdown": "^1.0.12",
     "vue-router": "^3.2.0",
     "vue2-filters": "^0.11.0",

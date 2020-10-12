@@ -22,7 +22,7 @@ const routes = [
   {
     path: "/gallery",
     name: "register",
-    component: ()=> import("./pages/gallery")
+    component: ()=> import("./components/gallery")
   },
   {
     path: "/error",

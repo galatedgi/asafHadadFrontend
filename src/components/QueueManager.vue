@@ -9,7 +9,7 @@
                 <th></th>
             </tr>
              </thead>
-            <tr v-for="turn in myTurns" :key="turn.date">
+            <tr v-for="(turn,i) in myTurns" :index="i" :key="i">
                 <th>{{turn.date}} </th>
                 <th>{{turn.day}} </th>
                 <th>{{turn.time}} </th>
