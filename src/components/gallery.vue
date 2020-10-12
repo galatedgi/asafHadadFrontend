@@ -44,5 +44,8 @@ export default {
  #carousel{
     height: 400px;
     width: 300px;
+        border-style: double;
+
   }
+
 </style>
