@@ -12,6 +12,8 @@
         </div>
         <div>
           <p><b-button pill data-toggle="collapse"> מי אני? </b-button></p>
+
+          <br>
         </div>
         <div  v-if="$root.store.username">
           <p><b-button pill v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
@@ -20,27 +22,34 @@
                       <addTurn/>
               </b-card>
            </b-collapse>
+           <br>
            <p><b-button pill v-b-toggle.queue_manager data-toggle="collapse">התורים שלי </b-button></p>
           <b-collapse id="queue_manager" class="mt-2" @show="myTurns()" accordion="my-accordion">
                 <b-card class="myCollapse">
                       <queueManager ref="queueManager"/>
               </b-card>
           </b-collapse>
+          <br>
         </div>
         <div v-else>
           <b-col>
             <p><b-button pill  @click="Login()">התחבר </b-button></p>
+            <br>
             <p><b-button pill @click="Register()">הרשם </b-button></p>
+            <br>
         </b-col>
         </div>
         <div>
           <p><b-button pill v-b-toggle.contact_us data-toggle="collapse" >צור קשר </b-button></p>
           <b-collapse id="contact_us"  class="mt-2" accordion="my-accordion">
             <b-card class="myCollapse">
-                <ContactUs/>
+                <contactUs/>
             </b-card>
           </b-collapse>
+          <br>
            <p><b-button pill >איך מגיעים </b-button></p>
+
+           <br>
         </div>
         <br>
         <div>
@@ -57,14 +66,14 @@ import { eventBus } from "../main.js";
 import addTurn from "../components/AddTurn";
 import queueManager from "../components/QueueManager";
 import gallery from "../components/gallery";
-import ContactUs from "../components/ContactUs";
+import contactUs from "../components/ContactUs";
 export default {
   name: "Main",
   components:{
     addTurn,
     queueManager,
     gallery,
-    ContactUs
+    contactUs
   },
   data(){
     return{
