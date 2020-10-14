@@ -52,7 +52,7 @@
               </b-collapse>
               <br>
 
-          <p><b-button pill v-b-toggle.contact_us data-toggle="collapse" >צור קשר </b-button></p>
+          <p><b-button pill v-b-toggle.contact_us data-toggle="collapse" ref="contactus" >צור קשר </b-button></p>
           <b-collapse id="contact_us"  class="mt-2" accordion="my-accordion">
             <b-card class="myCollapse">
                 <contactUs/>

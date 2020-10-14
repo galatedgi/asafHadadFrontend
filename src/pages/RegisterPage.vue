@@ -97,7 +97,7 @@ export default {
             last_name: this.form.lastName,
           }
         );
-        this.$root.toast("Register", "Registered successfully", "success");
+        this.$root.toast("Register", "הרשמה בוצעה בהצלחה");
         this.$root.store.login(this.form.username);
         this.$router.push("/");//add login after register
       } catch (err) {
