@@ -47,7 +47,12 @@
             </b-card>
           </b-collapse>
           <br>
-           <p><b-button pill >איך מגיעים </b-button></p>
+           <p><b-button pill v-b-toggle.location data-toggle="collapse">איך מגיעים? </b-button></p>
+             <b-collapse id="location"  class="mt-2" accordion="my-accordion">
+                <b-card class="myCollapse">
+                    <location/>
+                </b-card>
+              </b-collapse>
 
            <br>
         </div>
@@ -67,13 +72,15 @@ import addTurn from "../components/AddTurn";
 import queueManager from "../components/QueueManager";
 import gallery from "../components/gallery";
 import contactUs from "../components/ContactUs";
+import location from "../components/Location";
 export default {
   name: "Main",
   components:{
     addTurn,
     queueManager,
     gallery,
-    contactUs
+    contactUs,
+    location
   },
   data(){
     return{
