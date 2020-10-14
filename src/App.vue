@@ -4,6 +4,7 @@
     <link href='https://fonts.googleapis.com/css?family=Cormorant Infant' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'> -->
     <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital@1&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
     <b-navbar type="dark" variant="dark">
       <b-navbar-nav class="navbar-nav mr-auto">
          <!-- <b-nav-item :to="{ name: 'main' }" class="nav-item active">
@@ -57,8 +58,9 @@ export default {
 #app {
   //     font-family: 'Acme';font-size: 22px;
 
-  // font-family: 'Cormorant Infant';
-  font-family: 'Piazzolla', serif;
+ 
+  // font-family: 'Piazzolla', serif;
+  font-family: 'Amatic SC', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color:whitesmoke;

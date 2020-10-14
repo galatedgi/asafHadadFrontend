@@ -10,11 +10,6 @@
           <div v-if="!$root.store.username">
           <p> על מנת להשתמש בשירותי האתר עליך להיות מחובר! </p>
         </div>
-        <div>
-          <p><b-button pill data-toggle="collapse"> מי אני? </b-button></p>
-
-          <br>
-        </div>
         <div  v-if="$root.store.username">
           <p><b-button pill v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
           <b-collapse id="add_turn" class="mt-2" accordion="my-accordion">
@@ -40,6 +35,23 @@
         </b-col>
         </div>
         <div>
+          <gallery id="gallery"/>
+        </div>
+        <br>
+
+        <div>
+          <p><b-button pill data-toggle="collapse"> מי אני? </b-button></p>
+
+          <br>
+
+           <p><b-button pill v-b-toggle.location data-toggle="collapse">איך מגיעים? </b-button></p>
+             <b-collapse id="location"  class="mt-2" accordion="my-accordion">
+                <b-card class="myCollapse">
+                    <location/>
+                </b-card>
+              </b-collapse>
+              <br>
+
           <p><b-button pill v-b-toggle.contact_us data-toggle="collapse" >צור קשר </b-button></p>
           <b-collapse id="contact_us"  class="mt-2" accordion="my-accordion">
             <b-card class="myCollapse">
@@ -47,20 +59,8 @@
             </b-card>
           </b-collapse>
           <br>
-           <p><b-button pill v-b-toggle.location data-toggle="collapse">איך מגיעים? </b-button></p>
-             <b-collapse id="location"  class="mt-2" accordion="my-accordion">
-                <b-card class="myCollapse">
-                    <location/>
-                </b-card>
-              </b-collapse>
-
-           <br>
         </div>
         <br>
-        <div>
-          <gallery id="gallery"/>
-        </div>
-
       </b-col>
     </b-container>
   </div>
@@ -87,11 +87,6 @@ export default {
           collapseStates: [false, false]
     }
   },
-  // async created() {
-  //   eventBus.$on('setMyTurns',()=>{
-  //     this.myTurns();
-  //   });
-  // },
   methods: {
     Login(){
       this.$router.push("/login");
@@ -115,6 +110,16 @@ export default {
     align-items: center;
     text-align: center;
   }
+
+  // .btn{
+  //   color: whitesmoke;
+  //   background-color:black;
+  //   border-color: whitesmoke;
+  //   border-style: double;
+  //   border-width: 2px;
+  //   width:120px ;
+  //   height: 40px;
+  // }
 
   .btn{
     background-color:teal;
@@ -147,7 +152,5 @@ export default {
      height: 400px;
     width: 300px;
     }
-  // h1{
-  //   color: aqua;
-  // }
+
 </style>

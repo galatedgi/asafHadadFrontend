@@ -1,6 +1,10 @@
 <template>
     <div>
-        <table id="myTable" class="table" :items="myTurns">
+        <div v-if="!showTable" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <div v-if="showTable">
+        <table v-if="!myTurns.length==0" id="myTable" class="table" :items="myTurns">
             <thead class="thead-light">
             <tr>
                 <th>תאריך</th>
@@ -13,9 +17,11 @@
                 <th>{{turn.date}} </th>
                 <th>{{turn.day}} </th>
                 <th>{{turn.time}} </th>
-                <th><b-button variant="danger" @click="deleteTurn(turn.date,turn.time)"> בטל תור </b-button></th>
+                <th><b-button variant="danger" @click="deleteTurn(turn.date,turn.time)"> בטל </b-button></th>
             </tr>
         </table>
+        <p v-if="myTurns.length==0">לא נקבעו לך תורים במערכת</p>
+        </div>
     </div>
 </template>
 
@@ -24,7 +30,8 @@
 export default {
     data(){
         return{
-            myTurns: []
+            myTurns: [],
+            showTable:false,
         }
     },
     // mounted(){
@@ -49,6 +56,7 @@ export default {
         },
         async setTurns(){
         try{
+            this.showTable=false;
             this.myTurns=[];
             const res= await this.axios.get(`https://asafhadadbackend.herokuapp.com/queue/myturns/user/${this.$root.store.username}`);
             for(let i in res.data){
@@ -58,6 +66,7 @@ export default {
                 item.time=res.data[i].time;
                 this.myTurns.push(item);
             }
+             this.showTable=true;
         }catch(err){
           console.log(err);
           this.$router.push("/error");

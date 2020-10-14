@@ -15,15 +15,13 @@
           type="text"
           :state="validateState('username')"
         ></b-form-input>
-        <b-form-invalid-feedback>
-          Username is required
-        </b-form-invalid-feedback>
+        <b-form-invalid-feedback>שדה זה הינו חובה</b-form-invalid-feedback>
       </b-form-group>
 
       <b-button
         type="submit"
         class="mx-auto w-100"
-        >Login</b-button
+        >התחבר</b-button
       >
       <div dir="rtl" class="mt-2">
         אינך רשום לשירות?
