@@ -11,14 +11,14 @@
           <p> על מנת להשתמש בשירותי האתר עליך להיות מחובר! </p>
         </div>
         <div  v-if="$root.store.username">
-          <p><b-button pill v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
+          <p><b-button id="addturn" pill v-b-toggle.add_turn data-toggle="collapse">הזמנת תור </b-button></p>
           <b-collapse id="add_turn" class="mt-2" accordion="my-accordion">
               <b-card class="myCollapse">
                       <addTurn/>
               </b-card>
            </b-collapse>
            <br>
-           <p><b-button pill v-b-toggle.queue_manager data-toggle="collapse" @scroll="click()">התורים שלי </b-button></p>
+           <p><b-button id="queuemanager" pill v-b-toggle.queue_manager data-toggle="collapse" @scroll="click()">התורים שלי </b-button></p>
           <b-collapse id="queue_manager" class="mt-2" @show="myTurns()" accordion="my-accordion">
                 <b-card class="myCollapse">
                       <queueManager ref="queueManager"/>
@@ -44,7 +44,7 @@
 
           <br>
 
-           <p><b-button pill v-b-toggle.location data-toggle="collapse">איך מגיעים? </b-button></p>
+           <p><b-button id="loac" pill v-b-toggle.location data-toggle="collapse">איך מגיעים? </b-button></p>
              <b-collapse id="location"  class="mt-2" accordion="my-accordion">
                 <b-card class="myCollapse">
                     <location/>
@@ -152,5 +152,6 @@ export default {
      height: 400px;
     width: 300px;
     }
+
 
 </style>

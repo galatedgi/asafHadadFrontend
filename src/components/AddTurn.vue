@@ -163,12 +163,16 @@ export default {
                 let username=this.$root.store.username;
                 let date=this.form.day;
                 let time=this.form.time;
+                let price=this.form.price;
+                let fullname=this.$root.store.name;
                 const response = await this.axios.post(
                     "https://asafhadadbackend.herokuapp.com/queue/addturn",
                 {
                     username: username,
                     date: date,
-                    time: time
+                    time: time,
+                    price: price,
+                    fullname: fullname,
                 }
                 );
                 this.$root.toast("הזמנת תור חדש", "התור נקבע בהצלחה");

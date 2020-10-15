@@ -16,13 +16,14 @@
         <a>שלום {{this.$root.store.name}}</a>
         </b-nav-text > -->
         <b-dropdown :text="this.$root.store.name" variant="info" split-variant="info">
-          <b-dropdown-item v-if="this.$root.store.name!='אורח'">הזמנת תור</b-dropdown-item>
-          <b-dropdown-item v-if="this.$root.store.name!='אורח'">התורים שלי</b-dropdown-item>
-          <b-dropdown-item v-if="this.$root.store.name=='אורח'">התחבר</b-dropdown-item>
-            <b-dropdown-item v-if="this.$root.store.name=='אורח'">הרשם</b-dropdown-item>
-            <b-dropdown-item>מי אני?</b-dropdown-item>
-            <b-dropdown-item>איך מגיעים?</b-dropdown-item>
-            <b-dropdown-item href="#" v-scroll-to="'#contactus'">צור קשר</b-dropdown-item>
+          <b-dropdown-item href="#/">דף הבית</b-dropdown-item>
+          <b-dropdown-item v-b-toggle.add_turn v-scroll-to="'#addturn'" @click="homePage()" v-if="this.$root.store.name!='אורח'">הזמנת תור</b-dropdown-item>
+          <b-dropdown-item v-b-toggle.queue_manager href="#" v-scroll-to="'#queuemanager'" @click="homePage()" v-if="this.$root.store.name!='אורח'">התורים שלי</b-dropdown-item>
+          <b-dropdown-item href="#/login" v-if="this.$root.store.name=='אורח'">התחבר</b-dropdown-item>
+            <b-dropdown-item href="#/register" v-if="this.$root.store.name=='אורח'">הרשם</b-dropdown-item>
+            <b-dropdown-item >מי אני?</b-dropdown-item>
+            <b-dropdown-item v-b-toggle.location v-scroll-to="'#loac'" @click="homePage()">איך מגיעים?</b-dropdown-item>
+            <b-dropdown-item v-b-toggle.contact_us v-scroll-to="'#contactus'" @click="homePage()">צור קשר</b-dropdown-item>
            <b-dropdown-item @click="Logout()">התנתק</b-dropdown-item>
         </b-dropdown>
       </b-navbar-nav>
@@ -35,6 +36,10 @@
         <!-- <a v-if="$root.store.username != undefined" href @click="Logout" tag="button" class="btn btn-outline-light">התנתק</a> -->
       </b-navbar-nav>
     </b-navbar>
+      <div id="signboard" style="position: left">
+            <div class="neon">Asaf Hadad</div>
+            <div class="flux">Barbershop </div>
+      </div>
     <router-view />
   </div>
 </template>
@@ -57,7 +62,8 @@ export default {
     async Logout() {
       try{
           this.$root.store.logout();
-          await this.axios.post(`https://asafhadadbackend.herokuapp.com/Logout`);
+          const res=await this.axios.post(`https://asafhadadbackend.herokuapp.com/logout`);
+          console.log(res);
           if (this.$route.name === "main") {
               this.$forceUpdate;
           } else {
@@ -68,9 +74,11 @@ export default {
           this.$router.push("/error");
       }
     },
-    // openCpll(){
-    //   document.getElementById("contact_us").data.$route.show=true;
-    // }
+    homePage(){
+       if(this.$route.name!="main"){
+          this.$router.push("/");
+      }
+    }
   }
 };
 </script>
@@ -96,7 +104,7 @@ export default {
   color:whitesmoke;
   min-height: 100vh;
   // background-color:black;
-   background:url("./assets/Background3.jpg")no-repeat center center fixed;
+   background:url("./assets/Background4.jpeg")no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -106,7 +114,7 @@ export default {
 
 .b-nav-text
 {
-    position: left; ;
+    position: left; 
     width: 100%;
     left: 5000px;
     right: 5000px;
@@ -114,8 +122,9 @@ export default {
     margin:0 auto;
 }
 
-// .b-dropdown{
-//   color: teal !important;
+
+// .b-dropdown-item{
+//    position: right;
 // }
 
 // #nav {
@@ -193,5 +202,73 @@ export default {
 //    margin-right: 5px;
 //    color: white;
 //  }
+
+
+    @font-face {
+  font-family: neon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+}
+
+.neon {
+  font-family: neon;
+  color: #FB4264;
+  font-size: 50px;
+  line-height: 50px;
+  text-shadow: 0 0 3vw #F40A35;
+}
+
+.flux {
+  font-family: neon;
+  color: #426DFB;
+  font-size: 50px;
+  line-height: 50px;
+  text-shadow: 0 0 3vw #2356FF;
+}
+
+.neon {
+  animation: neon 1s ease infinite;
+  -moz-animation: neon 1s ease infinite;
+  -webkit-animation: neon 1s ease infinite;
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+.flux {
+  animation: flux 2s linear infinite;
+  -moz-animation: flux 2s linear infinite;
+  -webkit-animation: flux 2s linear infinite;
+  -o-animation: flux 2s linear infinite;
+}
+
+@keyframes flux {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  50% {
+    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+    color: #146C80;
+  }
+}
+
+    #signboard{
+      position: fixed;
+      left: 10%;
+      top: 50%;
+      -webkit-transform: rotate(-30deg);
+    }
+
+
 
 </style>
