@@ -15,7 +15,7 @@
         <!-- <b-nav-text >
         <a>שלום {{this.$root.store.name}}</a>
         </b-nav-text > -->
-        <b-dropdown :text="this.$root.store.name" variant="info" split-variant="info">
+        <b-dropdown :text="this.$root.store.name" variant="light" split-variant="danger">
           <b-dropdown-item href="#/">דף הבית</b-dropdown-item>
           <b-dropdown-item v-b-toggle.add_turn v-scroll-to="'#addturn'" @click="homePage()" v-if="this.$root.store.name!='אורח'">הזמנת תור</b-dropdown-item>
           <b-dropdown-item v-b-toggle.queue_manager href="#" v-scroll-to="'#queuemanager'" @click="homePage()" v-if="this.$root.store.name!='אורח'">התורים שלי</b-dropdown-item>
@@ -36,10 +36,17 @@
         <!-- <a v-if="$root.store.username != undefined" href @click="Logout" tag="button" class="btn btn-outline-light">התנתק</a> -->
       </b-navbar-nav>
     </b-navbar>
-      <div id="signboard" style="position: left">
+      <!-- <div id="signboard" style="position: left">
             <div class="neon">Asaf Hadad</div>
             <div class="flux">Barbershop </div>
+      </div> -->
+        <div id="signboard" style="position: left">
+            <div class="neon" style="position: left" >A<br>S<br>A<br>F<br><br>H<br>A<br>D<br>A<br>D<br></div>
+            <!-- <div class="flux" style="position: right">B<br>a<br>r<br>b<br>e<br>r<br>s<br>h<br>o<br>p </div> -->
       </div>
+      <!-- <div id="signboard" style="position: relative margin-right:500px;">
+        <div class="flux" style="position: relative">B<br>a<br>r<br>b<br>e<br>r<br>s<br>h<br>o<br>p </div>
+      </div> -->
     <router-view />
   </div>
 </template>
@@ -215,7 +222,17 @@ export default {
   font-size: 50px;
   line-height: 50px;
   text-shadow: 0 0 3vw #F40A35;
+  // position: left;
 }
+
+// .neon {
+//   font-family: neon;
+//   color: teal;
+//   font-size: 50px;
+//   line-height: 50px;
+//   text-shadow: 0 0 3vw teal;
+//   // position: left;
+// }
 
 .flux {
   font-family: neon;
@@ -223,6 +240,7 @@ export default {
   font-size: 50px;
   line-height: 50px;
   text-shadow: 0 0 3vw #2356FF;
+  position: right;
 }
 
 .neon {
@@ -265,8 +283,10 @@ export default {
     #signboard{
       position: fixed;
       left: 10%;
-      top: 50%;
-      -webkit-transform: rotate(-30deg);
+      top: 20%;
+      width: 120px;
+      // top: 50%;
+      // -webkit-transform: rotate(-30deg);
     }
 
 

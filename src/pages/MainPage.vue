@@ -122,7 +122,8 @@ export default {
   // }
 
   .btn{
-    background-color:teal;
+    background-color:black;
+    border-color: teal;
     width:120px ;
     height: 40px;
   }

@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: "/gallery",
-    name: "register",
+    name: "gallery",
     component: ()=> import("./components/gallery")
   },
   {
