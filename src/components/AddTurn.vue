@@ -43,7 +43,13 @@ export default {
             },
             days: [{ value: null, text: "", disabled: true }],
             daytimes: [{ value: null, text: "", disabled: true }],
-            prices:[{value:50, text:"תספורת גבר 50 ש״ח"},{value:45, text:"תספורת ילד/חייל/סטודנט 45ש״ח"}],
+            prices:[
+                {value:50, text:"תספורת גבר 50 ש״ח"},
+                {value:45, text:"תספורת ילד/חייל/סטודנט 45ש״ח"},
+                {value:60, text:"תספורת גבר+שעווה 60 ש״ח"},
+                {value:150, text:"החלקות החל מ-150 ש״ח"},
+                {value:100, text:"גוונים/צבע החל מ-100ש״ח"},
+                ],
             showForm: true
         }
     },
@@ -183,7 +189,7 @@ export default {
 <style>
  #submitBtn{
      background-color: teal;
-     width:80px;
+     width:100px;
  }
 
 

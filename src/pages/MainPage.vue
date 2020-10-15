@@ -18,7 +18,7 @@
               </b-card>
            </b-collapse>
            <br>
-           <p><b-button pill v-b-toggle.queue_manager data-toggle="collapse">התורים שלי </b-button></p>
+           <p><b-button pill v-b-toggle.queue_manager data-toggle="collapse" @scroll="click()">התורים שלי </b-button></p>
           <b-collapse id="queue_manager" class="mt-2" @show="myTurns()" accordion="my-accordion">
                 <b-card class="myCollapse">
                       <queueManager ref="queueManager"/>
@@ -52,8 +52,8 @@
               </b-collapse>
               <br>
 
-          <p><b-button pill v-b-toggle.contact_us data-toggle="collapse" ref="contactus" >צור קשר </b-button></p>
-          <b-collapse id="contact_us"  class="mt-2" accordion="my-accordion">
+          <p><b-button id="contactus" pill v-b-toggle.contact_us data-toggle="collapse" >צור קשר </b-button></p>
+          <b-collapse id="contact_us"  class="mt-2" accordion="my-accordion" ref="contactus">
             <b-card class="myCollapse">
                 <contactUs/>
             </b-card>
@@ -82,11 +82,11 @@ export default {
     contactUs,
     location
   },
-  data(){
-    return{
-          collapseStates: [false, false]
-    }
-  },
+  // data(){
+  //   return{
+  //         collapseStates: [false, false]
+  //   }
+  // },
   methods: {
     Login(){
       this.$router.push("/login");
@@ -97,10 +97,10 @@ export default {
     async myTurns(){
       this.$refs.queueManager.setTurns();
     },
-    collapseAll() {
-      console.log("DSd");
-      this.collapseStates = this.collapseStates.map(x => false)
-    }
+    // collapseAll() {
+    //   console.log("DSd");
+    //   this.collapseStates = this.collapseStates.map(x => false)
+    // }
   }
 };
 </script>

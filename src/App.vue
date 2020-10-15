@@ -7,7 +7,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
-    <b-navbar type="dark" variant="dark">
+    <b-navbar type="dark" variant="dark" sticky>
       <b-navbar-nav class="ml-auto">
          <!-- <b-nav-item :to="{ name: 'main' }" class="nav-item active">
           Asaf Hadad Barbershop
@@ -22,7 +22,7 @@
             <b-dropdown-item v-if="this.$root.store.name=='אורח'">הרשם</b-dropdown-item>
             <b-dropdown-item>מי אני?</b-dropdown-item>
             <b-dropdown-item>איך מגיעים?</b-dropdown-item>
-            <b-dropdown-item>צור קשר</b-dropdown-item>
+            <b-dropdown-item href="#" v-scroll-to="'#contactus'">צור קשר</b-dropdown-item>
            <b-dropdown-item @click="Logout()">התנתק</b-dropdown-item>
         </b-dropdown>
       </b-navbar-nav>
@@ -68,6 +68,9 @@ export default {
           this.$router.push("/error");
       }
     },
+    // openCpll(){
+    //   document.getElementById("contact_us").data.$route.show=true;
+    // }
   }
 };
 </script>

@@ -23,6 +23,7 @@
     "vue-carousel-3d": "^1.0.1",
     "vue-dynamic-dropdown": "^1.0.12",
     "vue-router": "^3.2.0",
+    "vue-scrollto": "^2.19.1",
     "vue2-filters": "^0.11.0",
     "vuelidate": "^0.7.5"
   },

@@ -5,6 +5,7 @@ import axios from "axios";
 import routes from "./routes";
 import VueRouter from "vue-router";
 import Vuelidate from "vuelidate";
+import VueScrollTo from 'vue-scrollto';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import {
@@ -42,6 +43,7 @@ const router = new VueRouter({
   routes
 });
 Vue.use(Vuelidate);
+Vue.use(VueScrollTo);
 
 axios.interceptors.request.use(
   function(config) {
