@@ -40,10 +40,11 @@
         <br>
         <br>
         <br>
-           <br>
         <br>
+        <br>
+           <br>
+           <br>
         
-
         <div>
           <p><b-button pill data-toggle="collapse"> מי אני? </b-button></p>
 
@@ -155,8 +156,8 @@ export default {
 
     #gallery{
      position: relative;
-     height: 300px;
-    width: 200px;
+     height: 250px;
+    width: 150px;
     }
 
 
