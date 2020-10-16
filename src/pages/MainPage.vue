@@ -150,8 +150,8 @@ export default {
 
     #gallery{
      position: relative;
-     height: 400px;
-    width: 300px;
+     height: 380px;
+    width: 280px;
     }
 
 

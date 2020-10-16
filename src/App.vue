@@ -3,7 +3,7 @@
     <!-- <link href='https://fonts.googleapis.com/css?family=Cute Font' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Cormorant Infant' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'> -->
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Piazzolla:ital@1&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Exo+2:200i" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
@@ -40,12 +40,26 @@
             <div class="neon">Asaf Hadad</div>
             <div class="flux">Barbershop </div>
       </div> -->
-        <div id="signboard" style="position: left">
-            <div class="neon" style="position: left" >A<br>S<br>A<br>F<br><br>H<br>A<br>D<br>A<br>D<br></div>
+        <div id="signboard">
+            <div class="flux" >A<br>S<br>A<br>F<br><br>H<br>A<br>D<br>A<br>D<br></div>
+                <!-- <div class="neon" >A</div>
+                <div class="flux" >S</div>
+                <div class="neon" >A</div>
+                <div class="flux" >F</div><br>
+                <div class="neon" >H</div>
+                <div class="flux" >a</div>
+                <div class="neon" >D</div>
+                <div class="flux" >A</div>
+                <div class="neon" >F</div> -->
             <!-- <div class="flux" style="position: right">B<br>a<br>r<br>b<br>e<br>r<br>s<br>h<br>o<br>p </div> -->
       </div>
       <!-- <div id="signboard" style="position: relative margin-right:500px;">
         <div class="flux" style="position: relative">B<br>a<br>r<br>b<br>e<br>r<br>s<br>h<br>o<br>p </div>
+      </div> -->
+      <!-- <div id="signboard">
+      <h1 id="signboard-h1" contenteditable spellcheck="false">
+        B<br>a<br>r<br>b<br>e<br>r<br>s<br>h<br>o<br>p 
+      </h1>
       </div> -->
     <router-view />
   </div>
@@ -91,7 +105,7 @@ export default {
 </script>
 
 <style lang="scss">
-
+@import url('https://fonts.googleapis.com/css?family=Londrina+Outline');
 
 // .a, a:hover, a:focus, a:active , a:visited, a:link{
 //       text-decoration: inherit;
@@ -112,6 +126,7 @@ export default {
   min-height: 100vh;
   // background-color:black;
    background:url("./assets/Background4.jpeg")no-repeat center center fixed;
+    //  background:url("./assets/Background5.jpg")no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -210,14 +225,18 @@ export default {
 //    color: white;
 //  }
 
+//************************************************************** */
 
     @font-face {
   font-family: neon;
   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
 }
 
+
+
 .neon {
-  font-family: neon;
+  // font-family:  neon;
+  font-family: 'Londrina Outline', cursive;
   color: #FB4264;
   font-size: 50px;
   line-height: 50px;
@@ -236,6 +255,7 @@ export default {
 
 .flux {
   font-family: neon;
+  // font-family: 'Londrina Outline', cursive;
   color: #426DFB;
   font-size: 50px;
   line-height: 50px;
@@ -289,6 +309,83 @@ export default {
       // -webkit-transform: rotate(-30deg);
     }
 
+//************************************************ */
+
+// @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
+
+// :root {
+//   /* Base font size */
+//   font-size: 10px;   
+  
+//   /* Set neon color */
+//   --neon-text-color: #f40;
+//   --neon-border-color: #08f;
+// }
+
+// body {
+//   font-family: 'Exo 2', sans-serif;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;  
+//   background: #000;
+//   min-height: 100vh;
+// }
+
+// #signboard-h1 {
+//   font-family: 'Londrina Outline', cursive;
+//   font-size: 25px;
+//   font-weight: 200;
+//   font-style: italic;
+//   color: #fff;
+//   padding: 3rem 6rem 3rem;
+//   border: 0.2rem solid #fff;
+//   border-radius: 2.5rem;
+//   text-transform: uppercase;
+//   animation: flicker 1.5s infinite alternate;     
+// }
+
+// h1::-moz-selection {
+//   background-color: var(--neon-border-color);
+//   color: var(--neon-text-color);
+// }
+
+// h1::selection {
+//   background-color: var(--neon-border-color);
+//   color: var(--neon-text-color);
+// }
+
+// h1:focus {
+//   outline: none;
+// }
+
+// /* Animate neon flicker */
+// @keyframes flicker {
+    
+//     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+      
+//         text-shadow:
+//             -0.2rem -0.2rem 1rem #fff,
+//             0.2rem 0.2rem 1rem #fff,
+//             0 0 2rem var(--neon-text-color),
+//             0 0 4rem var(--neon-text-color),
+//             0 0 6rem var(--neon-text-color),
+//             0 0 8rem var(--neon-text-color),
+//             0 0 10rem var(--neon-text-color);
+        
+//         box-shadow:
+//             0 0 .5rem #fff,
+//             inset 0 0 .5rem #fff,
+//             0 0 2rem var(--neon-border-color),
+//             inset 0 0 2rem var(--neon-border-color),
+//             0 0 4rem var(--neon-border-color),
+//             inset 0 0 4rem var(--neon-border-color);        
+//     }
+    
+//     20%, 24%, 55% {        
+//         text-shadow: none;
+//         box-shadow: none;
+//     }    
+// }
 
 
 </style>
