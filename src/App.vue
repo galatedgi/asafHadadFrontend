@@ -302,7 +302,7 @@ export default {
 
     #signboard{
       position: fixed;
-      left: 7.5%;
+      left: 7%;
       top: 20%;
       width: 120px;
       // top: 50%;
