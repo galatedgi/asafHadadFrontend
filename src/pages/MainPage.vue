@@ -40,6 +40,8 @@
         <br>
         <br>
         <br>
+           <br>
+        <br>
         
 
         <div>
@@ -153,8 +155,8 @@ export default {
 
     #gallery{
      position: relative;
-     height: 350px;
-    width: 250px;
+     height: 300px;
+    width: 200px;
     }
 
 
