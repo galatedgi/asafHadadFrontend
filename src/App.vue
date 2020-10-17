@@ -38,7 +38,7 @@
     </b-navbar>
       <div id="signboard">
             <!-- <div class="neon">Asaf Hadad</div> -->
-            <div class="flux">Asaf Hadad </div>
+            <div class="flux">Asaf__Hadad </div>
       </div>
         <!-- <div id="signboard">
             <div class="flux" >A<br>S<br>A<br>F<br><br>H<br>A<br>D<br>A<br>D<br></div> -->
@@ -257,8 +257,8 @@ export default {
   font-family: neon;
   // font-family: 'Londrina Outline', cursive;
   color: #426DFB;
-  font-size: 60px;
-  line-height: 60px;
+  font-size: 40px;
+  line-height: 40px;
   text-shadow: 0 0 3vw #2356FF;
   position: right;
 }
@@ -302,7 +302,7 @@ export default {
 
     #signboard{
       position: fixed;
-      left: 5%;
+      left: 3%;
       top: 30%;
       width: 600px;
       // top: 50%;
