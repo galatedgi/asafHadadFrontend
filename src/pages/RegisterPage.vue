@@ -30,8 +30,8 @@
         </b-form-invalid-feedback>
       </b-form-group>
 
-      <b-button type="reset" variant="dark">איפוס</b-button>
-      <b-button type="submit" variant="primary" style="width:250px;" class="ml-5 w-75 Rbtn">הרשם</b-button>
+      <b-button type="reset" variant="light" class="ml-2">איפוס</b-button>
+      <b-button type="submit" variant="primary" class="ml-20 w-50 Rbtn">הרשם</b-button>
       <div class="mt-2">
         הינך רשום לשירות?
         <router-link to="login" class="link"> לחץ כאן להתחברות</router-link>
@@ -137,6 +137,8 @@ div{
 
 .Rbtn{
    background-color: teal; border-color: teal;
+   width:50px;
+   
 }
 
   .link{

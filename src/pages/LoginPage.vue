@@ -5,7 +5,7 @@
     <b-form @submit.prevent="onLogin">
       <b-form-group
         id="input-group-Username"
-        label-cols-sm="5"
+        label-cols-sm="3"
         label="מספר טלפון"
         label-for="Username"
       >
