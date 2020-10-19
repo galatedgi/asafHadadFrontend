@@ -185,6 +185,9 @@ export default {
 #footer{
    text-align: center; 
   background: black;
+  position: fixed;
+ bottom: 0;
+  width: 100%;
 }
 
 // .b-dropdown-item{
