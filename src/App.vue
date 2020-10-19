@@ -7,7 +7,7 @@
    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
 
-    <b-navbar type="dark" variant="dark" sticky>
+    <b-navbar type="dark" variant="dark" sticky >
       <b-navbar-nav class="ml-auto">
          <!-- <b-nav-item :to="{ name: 'main' }" class="nav-item active">
           Asaf Hadad Barbershop
@@ -15,16 +15,45 @@
         <!-- <b-nav-text >
         <a>שלום {{this.$root.store.name}}</a>
         </b-nav-text > -->
-        <b-dropdown :text="this.$root.store.name" variant="light" split-variant="danger">
-          <b-dropdown-item href="#/">דף הבית</b-dropdown-item>
-          <b-dropdown-item v-b-toggle.add_turn v-scroll-to="'#addturn'" @click="homePage()" v-if="this.$root.store.name!='אורח'">הזמנת תור</b-dropdown-item>
-          <b-dropdown-item v-b-toggle.queue_manager href="#" v-scroll-to="'#queuemanager'" @click="homePage()" v-if="this.$root.store.name!='אורח'">התורים שלי</b-dropdown-item>
-          <b-dropdown-item href="#/login" v-if="this.$root.store.name=='אורח'">התחבר</b-dropdown-item>
-            <b-dropdown-item href="#/register" v-if="this.$root.store.name=='אורח'">הרשם</b-dropdown-item>
-            <b-dropdown-item >מי אני?</b-dropdown-item>
-            <b-dropdown-item v-b-toggle.location v-scroll-to="'#loac'" @click="homePage()">איך מגיעים?</b-dropdown-item>
-            <b-dropdown-item v-b-toggle.contact_us v-scroll-to="'#contactus'" @click="homePage()">צור קשר</b-dropdown-item>
-           <b-dropdown-item @click="Logout()">התנתק</b-dropdown-item>
+        <b-dropdown id="drop" :text="this.$root.store.name" variant="light" split-variant="danger" right >
+          <b-dropdown-item href="#/">
+            <!-- <img id="s-icon" src="./assets/logo.png"> -->
+            <b-dropdown-text> <img id="s-icon" src="./assets/logo.png"> דף הבית</b-dropdown-text>
+            
+            <!-- דף הבית -->
+          </b-dropdown-item>
+          <b-dropdown-item v-b-toggle.add_turn v-scroll-to="'#addturn'" @click="homePage()" v-if="this.$root.store.name!='אורח'">
+            <!-- <img id="s-icon" src="./assets/logo.png"> -->
+             <b-dropdown-text> <img id="s-icon" src="./assets/logo.png"> הזמנת תור</b-dropdown-text>
+          </b-dropdown-item>
+          <b-dropdown-item v-b-toggle.queue_manager href="#" v-scroll-to="'#queuemanager'" @click="homePage()" v-if="this.$root.store.name!='אורח'">
+              <!-- <img id="s-icon" src="./assets/logo.png"> -->
+              <b-dropdown-text> <img id="s-icon" src="./assets/logo.png">התורים שלי</b-dropdown-text>
+            </b-dropdown-item>
+          <b-dropdown-item href="#/login" v-if="this.$root.store.name=='אורח'">
+            <!-- <img id="s-icon" src="./assets/logo.png"> -->
+            <b-dropdown-text> <img id="s-icon" src="./assets/logo.png">התחבר</b-dropdown-text>
+          </b-dropdown-item>
+            <b-dropdown-item href="#/register" v-if="this.$root.store.name=='אורח'">
+              <!-- <img id="s-icon" src="./assets/logo.png"> -->
+              <b-dropdown-text> <img id="s-icon" src="./assets/logo.png">הרשם</b-dropdown-text>
+            </b-dropdown-item>
+            <b-dropdown-item >
+               <!-- <img id="s-icon" src="./assets/logo.png"> -->
+                <b-dropdown-text> <img id="s-icon" src="./assets/logo.png">מי אני?</b-dropdown-text>
+              </b-dropdown-item>
+            <b-dropdown-item v-b-toggle.location v-scroll-to="'#loac'" @click="homePage()">
+                <!-- <img id="s-icon" src="./assets/logo.png"> -->
+                <b-dropdown-text> <img id="s-icon" src="./assets/logo.png">איך מגיעים?</b-dropdown-text>
+              </b-dropdown-item>
+            <b-dropdown-item v-b-toggle.contact_us v-scroll-to="'#contactus'" @click="homePage()">
+              <!-- <img id="s-icon" src="./assets/logo.png">   -->
+              <b-dropdown-text> <img id="s-icon" src="./assets/logo.png">צור קשר</b-dropdown-text>
+            </b-dropdown-item>
+           <b-dropdown-item @click="Logout()">
+             <!-- <img id="s-icon" src="./assets/logo.png"> -->
+              <b-dropdown-text> <img id="s-icon" src="./assets/logo.png">התנתק</b-dropdown-text>
+            </b-dropdown-item>
         </b-dropdown>
       </b-navbar-nav>
       <b-navbar-nav>
@@ -36,10 +65,10 @@
         <!-- <a v-if="$root.store.username != undefined" href @click="Logout" tag="button" class="btn btn-outline-light">התנתק</a> -->
       </b-navbar-nav>
     </b-navbar>
-      <div id="signboard">
-            <!-- <div class="neon">Asaf Hadad</div> -->
+      <!-- <div id="signboard">
+            <div class="neon">Asaf Hadad</div>
             <div class="flux">Asaf__Hadad </div>
-      </div>
+      </div> -->
         <!-- <div id="signboard">
             <div class="flux" >A<br>S<br>A<br>F<br><br>H<br>A<br>D<br>A<br>D<br></div> -->
                 <!-- <div class="neon" >A</div>
@@ -134,16 +163,21 @@ export default {
 
 }
 
-.b-nav-text
+.b-dropdown-text
 {
-    position: left; 
-    width: 100%;
-    left: 5000px;
-    right: 5000px;
-    text-align: center;
-    margin:0 auto;
+  // color: tomato;
+  // position:inherit;
 }
 
+#drop{
+  position: left;
+}
+
+#s-icon{
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
 
 // .b-dropdown-item{
 //    position: right;
@@ -227,87 +261,87 @@ export default {
 
 //************************************************************** */
 
-    @font-face {
-  font-family: neon;
-  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
-}
+//     @font-face {
+//   font-family: neon;
+//   src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/neon.ttf);
+// }
 
 
-
-.neon {
-  // font-family:  neon;
-  font-family: 'Londrina Outline', cursive;
-  color: #FB4264;
-  font-size: 50px;
-  line-height: 50px;
-  text-shadow: 0 0 3vw #F40A35;
-  // position: left;
-}
 
 // .neon {
-//   font-family: neon;
-//   color: teal;
+//   // font-family:  neon;
+//   font-family: 'Londrina Outline', cursive;
+//   color: #FB4264;
 //   font-size: 50px;
 //   line-height: 50px;
-//   text-shadow: 0 0 3vw teal;
+//   text-shadow: 0 0 3vw #F40A35;
 //   // position: left;
 // }
 
-.flux {
-  font-family: neon;
-  // font-family: 'Londrina Outline', cursive;
-  color: #426DFB;
-  font-size: 40px;
-  line-height: 40px;
-  text-shadow: 0 0 3vw #2356FF;
-  position: right;
-}
+// // .neon {
+// //   font-family: neon;
+// //   color: teal;
+// //   font-size: 50px;
+// //   line-height: 50px;
+// //   text-shadow: 0 0 3vw teal;
+// //   // position: left;
+// // }
 
-.neon {
-  animation: neon 1s ease infinite;
-  -moz-animation: neon 1s ease infinite;
-  -webkit-animation: neon 1s ease infinite;
-}
+// .flux {
+//   font-family: neon;
+//   // font-family: 'Londrina Outline', cursive;
+//   color: #426DFB;
+//   font-size: 40px;
+//   line-height: 40px;
+//   text-shadow: 0 0 3vw #2356FF;
+//   position: right;
+// }
 
-@keyframes neon {
-  0%,
-  100% {
-    text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
-    color: #FED128;
-  }
-  50% {
-    text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
-    color: #806914;
-  }
-}
+// .neon {
+//   animation: neon 1s ease infinite;
+//   -moz-animation: neon 1s ease infinite;
+//   -webkit-animation: neon 1s ease infinite;
+// }
 
-.flux {
-  animation: flux 2s linear infinite;
-  -moz-animation: flux 2s linear infinite;
-  -webkit-animation: flux 2s linear infinite;
-  -o-animation: flux 2s linear infinite;
-}
+// @keyframes neon {
+//   0%,
+//   100% {
+//     text-shadow: 0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+//     color: #FED128;
+//   }
+//   50% {
+//     text-shadow: 0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+//     color: #806914;
+//   }
+// }
 
-@keyframes flux {
-  0%,
-  100% {
-    text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
-    color: #28D7FE;
-  }
-  50% {
-    text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
-    color: #146C80;
-  }
-}
+// .flux {
+//   animation: flux 2s linear infinite;
+//   -moz-animation: flux 2s linear infinite;
+//   -webkit-animation: flux 2s linear infinite;
+//   -o-animation: flux 2s linear infinite;
+// }
 
-    #signboard{
-      position: fixed;
-      left: 3%;
-      top: 30%;
-      width: 600px;
-      // top: 50%;
-      -webkit-transform: rotate(-30deg);
-    }
+// @keyframes flux {
+//   0%,
+//   100% {
+//     text-shadow: 0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+//     color: #28D7FE;
+//   }
+//   50% {
+//     text-shadow: 0 0 .5vw #082180, 0 0 1.5vw #082180, 0 0 5vw #082180, 0 0 5vw #082180, 0 0 .2vw #082180, .5vw .5vw .1vw #0A3940;
+//     color: #146C80;
+//   }
+// }
+
+//     #signboard{
+//       position: fixed;
+//       left: 3%;
+//       top: 30%;
+//       width: 600px;
+//       // top: 50%;
+//       -webkit-transform: rotate(-30deg);
+    // }
 
 //************************************************ */
 

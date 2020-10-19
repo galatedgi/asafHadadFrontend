@@ -39,16 +39,19 @@ import {
 ].forEach((x) => Vue.use(x));
 
 axios.defaults.withCredentials = true;
+Vue.use(VueCookies);
 Vue.use(VueRouter);
 const router = new VueRouter({
   routes
 });
 Vue.use(Vuelidate);
 Vue.use(VueScrollTo);
-Vue.use(VueCookies);
+
+Vue.$cookies.config('30d');
+// Vue.$cookies.set('theme','default');
 
 axios.interceptors.request.use(
-  function(config) {
+  function(config) {  
     return config;
   },
   function(error) {
@@ -77,10 +80,13 @@ const shared_data = {
         username: username,
       }
     );
+    console.log(response);
     this.name=response.data.name;
     localStorage.setItem("asafhadadBarbershop", username);
     this.username = username;
     console.log("login", this.username);
+    // console.log(this.$cookies.get("session"));
+    console.log(Vue.cookie);
   },
   logout() {
     console.log("logout");

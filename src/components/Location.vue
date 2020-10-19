@@ -37,8 +37,7 @@ export default {
 #icon{
      height: 50px;
     width: 50px;
-    /* background-color: teal;
-     border-radius: 20%; */
+     /* border-radius: 20%; */
     /* filter : invert(1); */
   }
 
