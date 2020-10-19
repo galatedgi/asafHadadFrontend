@@ -91,6 +91,9 @@
       </h1>
       </div> -->
     <router-view />
+    <div id="footer" dir="ltr">
+       &copy; 2020 Copyright: <a href="https://www.linkedin.com/in/gal-atedgi-9644111a7" style="color: teal"> Gal Atedgi </a>
+    </div>
   </div>
 </template>
 
@@ -177,6 +180,11 @@ export default {
   position: relative;
   width: 25px;
   height: 25px;
+}
+
+#footer{
+   text-align: center; 
+  background: black;
 }
 
 // .b-dropdown-item{
