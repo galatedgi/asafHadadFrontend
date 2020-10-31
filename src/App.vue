@@ -106,7 +106,7 @@ export default {
   //     userName: this.$root.store.name
   //   }
   // },
-  async mounted(){
+  async created(){
     if(localStorage.getItem("asafhadadBarbershop") != undefined){
      this.$root.store.login(localStorage.getItem("asafhadadBarbershop"));
     }
@@ -115,8 +115,8 @@ export default {
     async Logout() {
       try{
           this.$root.store.logout();
-          const res=await this.axios.post(`https://asafhadadbackend.herokuapp.com/logout`);
-          console.log(res);
+          // const res=await this.axios.post(`https://asafhadadbackend.herokuapp.com/logout`);
+          // console.log(res);
           if (this.$route.name === "main") {
               this.$forceUpdate;
           } else {
