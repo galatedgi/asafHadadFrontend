@@ -90,7 +90,12 @@
         B<br>a<br>r<br>b<br>e<br>r<br>s<br>h<br>o<br>p 
       </h1>
       </div> -->
-    <router-view />
+      <div v-if="show">
+          <router-view />
+      </div>
+      <div v-else class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+      </div>
     <div id="footer" dir="ltr">
        &copy; 2020 Copyright: <a href="https://www.linkedin.com/in/gal-atedgi-9644111a7" style="color: teal"> Gal Atedgi </a>
     </div>
@@ -101,15 +106,16 @@
 import { eventBus } from "./main.js";
 export default {
   name: "App",
-  // data(){
-  //   return{
-  //     userName: this.$root.store.name
-  //   }
-  // },
+  data(){
+    return{
+      show: false
+    }
+  },
   async created(){
     if(localStorage.getItem("asafhadadBarbershop") != undefined){
      this.$root.store.login(localStorage.getItem("asafhadadBarbershop"));
     }
+    this.show=true
   },
   methods: {
     async Logout() {
