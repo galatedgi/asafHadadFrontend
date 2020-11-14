@@ -45,10 +45,10 @@ export default {
             daytimes: [{ value: null, text: "", disabled: true }],
             prices:[
                 {value:50, text:"תספורת גבר 50 ש״ח"},
-                {value:40, text:"תספורת ילד/חייל/סטודנט 40ש״ח"},
+                {value:40, text:"תספורת ילד/חייל/סטודנט 40 ש״ח"},
                 {value:60, text:"תספורת גבר+שעווה 60 ש״ח"},
                 {value:150, text:"החלקות החל מ-150 ש״ח"},
-                {value:100, text:"גוונים/צבע החל מ-100ש״ח"},
+                {value:100, text:"גוונים/צבע החל מ-100 ש״ח"},
                 ],
             showForm: true
         }
