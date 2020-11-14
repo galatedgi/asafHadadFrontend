@@ -88,7 +88,6 @@ export default {
     },
     async Register() {
       try {
-        console.log("enter to reg");
         const response = await this.axios.post(
           "https://asafhadadbackend.herokuapp.com/register",
           {
@@ -101,7 +100,7 @@ export default {
         this.$root.store.login(this.form.username);
         this.$router.push("/");//add login after register
       } catch (err) {
-        console.log(err.response);
+        //console.log(err.response);
         this.form.submitError = err.response.data;
       }
     },

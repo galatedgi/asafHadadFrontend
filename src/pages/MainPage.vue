@@ -46,7 +46,7 @@
            <br>
         
         <div>
-          <p><b-button pill data-toggle="collapse"> מי אני? </b-button></p>
+          <!-- <p><b-button pill data-toggle="collapse"> מי אני? </b-button></p> -->
 
           <br>
 
@@ -103,10 +103,6 @@ export default {
     async myTurns(){
       this.$refs.queueManager.setTurns();
     },
-    // collapseAll() {
-    //   console.log("DSd");
-    //   this.collapseStates = this.collapseStates.map(x => false)
-    // }
   }
 };
 </script>

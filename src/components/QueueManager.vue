@@ -68,15 +68,15 @@ export default {
             }
              this.showTable=true;
         }catch(err){
-          console.log(err);
+          //console.log(err);
           this.$router.push("/error");
         }
     },
     async deleteTurn(date,time){
         try{
-            console.log(this.$root.store.username); 
-            console.log(date);
-            console.log(time);
+            // console.log(this.$root.store.username); 
+            // console.log(date);
+            // console.log(time);
             let name=this.$root.store.username;
 
             const res= await this.axios.post(`https://asafhadadbackend.herokuapp.com/queue/deleteturn`,
@@ -86,10 +86,10 @@ export default {
                 time: time
             }
             );
-            console.log(res);
+            // console.log(res);
             this.setTurns();
         }catch(err){
-          console.log(err);
+        //   console.log(err);
           this.$router.push("/error");
         }
     }

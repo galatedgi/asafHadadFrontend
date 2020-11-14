@@ -45,7 +45,7 @@ export default {
             daytimes: [{ value: null, text: "", disabled: true }],
             prices:[
                 {value:50, text:"תספורת גבר 50 ש״ח"},
-                {value:45, text:"תספורת ילד/חייל/סטודנט 45ש״ח"},
+                {value:40, text:"תספורת ילד/חייל/סטודנט 40ש״ח"},
                 {value:60, text:"תספורת גבר+שעווה 60 ש״ח"},
                 {value:150, text:"החלקות החל מ-150 ש״ח"},
                 {value:100, text:"גוונים/צבע החל מ-100ש״ח"},
@@ -105,7 +105,7 @@ export default {
                  
              }
         }catch(err){
-            console.log(err);
+            // console.log(err);
           this.$router.push("/error");
         }
     },
@@ -129,7 +129,7 @@ export default {
                 this.form.time="";
                 let times= await this.axios.get(`https://asafhadadbackend.herokuapp.com/queue/allturns/day/${this.form.day}`);
                 for(let i in times.data){
-                    console.log(times.data[i]);
+                    // console.log(times.data[i]);
                     if(times.data[i].status == "free"){
                         let item=new Object();
                         item.text=times.data[i].time;
@@ -147,9 +147,9 @@ export default {
                 }
                 document.getElementById("daytimes").disabled=false;
 
-                console.log(times);
+                // console.log(times);
             }catch(err){
-                console.log(err);
+                // console.log(err);
                 this.$router.push("/error");
             }
         },
@@ -181,7 +181,7 @@ export default {
                 // console.log(response);
                 // eventBus.$emit('setMyTurns');
             }catch(err){
-                console.log(err);
+                // console.log(err);
                 this.$router.push("/error");
             }
             
