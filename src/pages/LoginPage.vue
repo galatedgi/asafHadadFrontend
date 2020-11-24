@@ -37,6 +37,9 @@
     >
       Login failed: {{ form.submitError }}
     </b-alert>
+      <div v-if="load" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+      </div>
   </div>
 </template>
 
@@ -50,7 +53,8 @@ export default {
       form: {
         username: "",
         submitError: undefined
-      }
+      },
+      load:false
     };
   },
   validations: {
@@ -74,9 +78,11 @@ export default {
         //   }
         // );
         // console.log(response);
-        this.$root.store.login(this.form.username);
+        this.load=true
+        await this.$root.store.login(this.form.username);
         // eventBus.$emit('fireMethod');
         // if(this.$route.name==="login"){
+          this.load=false
           this.$router.push("/");
         // }else if(this.$route.name === "main") {
         // eventBus.$emit('fireLastThree');

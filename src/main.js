@@ -80,18 +80,19 @@ const shared_data = {
         username: username,
       }
     );
-    console.log(response);
+    //console.log(response);
     this.name=response.data.name;
     localStorage.setItem("asafhadadBarbershop", username);
     this.username = username;
-    console.log("login", this.username);
+    //console.log("login", this.username);
     // console.log(this.$cookies.get("session"));
-    console.log(Vue.cookie);
+    //console.log(Vue.cookie);
   },
   logout() {
-    console.log("logout");
+    //console.log("logout");
     localStorage.removeItem("asafhadadBarbershop");
     this.username = undefined;
+    this.name="אורח";
   },
 };
 Vue.prototype.$store = shared_data;
