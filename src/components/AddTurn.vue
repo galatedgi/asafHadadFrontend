@@ -10,7 +10,7 @@
                 <b-form-select id="prices" v-model="$v.form.price.$model" :options="prices"  :state="validateState('price')"></b-form-select>
                 <b-form-invalid-feedback>שדה זה הינו חובה</b-form-invalid-feedback>
             </b-form-group>
-            <p v-if="form.price==45"> *בהצגת תעודה מזהה בלבד. </p>
+            <p v-if="form.price==40"> *בהצגת תעודה מזהה בלבד. </p>
             <b-form-group id="input-group-days" label-cols-sm="3" label="תאריך:" label-for="days">
                 <b-form-select id="days" v-model="$v.form.day.$model" :options="days" :state="validateState('day')" @change="setTimes()"></b-form-select>
                 <b-form-invalid-feedback>שדה זה הינו חובה</b-form-invalid-feedback>

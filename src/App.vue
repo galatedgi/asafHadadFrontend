@@ -113,7 +113,7 @@ export default {
   },
   async created(){
     if(localStorage.getItem("asafhadadBarbershop") != undefined){
-     this.$root.store.login(localStorage.getItem("asafhadadBarbershop"));
+     await this.$root.store.login(localStorage.getItem("asafhadadBarbershop"));
     }
     this.show=true
   },
@@ -163,7 +163,7 @@ export default {
   color:whitesmoke;
   min-height: 100vh;
   // background-color:black;
-   background:url("./assets/Background4.jpeg")no-repeat center center fixed;
+   background:url("https://res.cloudinary.com/da1ltmxeu/image/upload/v1605544536/Background4_aokkkw.jpg")no-repeat center center fixed;
     //  background:url("./assets/Background5.jpg")no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
