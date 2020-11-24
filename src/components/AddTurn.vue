@@ -5,6 +5,9 @@
         </div>
         <div v-if="showForm">
         <h1 class="title">קבע תור חדש!</h1>
+        <h8 class="title">תורים חדשים נפתחים בתחילת השבוע</h8>
+        <br>
+        <br>
         <b-form @submit.prevent="addTurn">
              <b-form-group id="input-group-prices" label-cols-sm="3" label="שירות:" label-for="prices">
                 <b-form-select id="prices" v-model="$v.form.price.$model" :options="prices"  :state="validateState('price')"></b-form-select>
