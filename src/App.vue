@@ -93,7 +93,7 @@
       <div v-if="show">
           <router-view />
       </div>
-      <div v-else class="spinner-border" role="status">
+      <div v-else class="spinner-border" role="status" style="position: fixed; top: 50%; left: 50%">
             <span class="sr-only">Loading...</span>
       </div>
     <div id="footer" dir="ltr">
