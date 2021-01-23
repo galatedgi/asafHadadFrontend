@@ -6,18 +6,18 @@ URL to the barbershop website: http://asafhadadbarbershop.com
 
 Functionality:
 
--Create a new user
+* Create a new user
 
--Login and logout from the user
+* Login and logout from the user
 
--Booking a queue to the barbershop
+* Booking a queue to the barbershop
 
--Cancellation of the queue at the barbershop
+* Cancellation of the queue at the barbershop
 
--View photos
+* View photos
 
--Open a route in waze
+* Open a route in waze
 
--Open a conversation on WhatsApp
+* Open a conversation on WhatsApp
 
 And more
